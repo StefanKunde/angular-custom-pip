@@ -6,17 +6,13 @@ import { MediaPlayerBase } from '../interfaces/MediaPlayerBase';
   templateUrl: './html5-audio-wrapper.component.html',
   styleUrls: ['./html5-audio-wrapper.component.scss']
 })
-export class Html5AudioWrapperComponent extends MediaPlayerBase implements OnInit {
+export class Html5AudioWrapperComponent extends MediaPlayerBase {
 
   @ViewChild('audio') audio!: ElementRef;
   @Input() audioUrl!: string;
 
   constructor() {
     super();
-  }
-
-  override ngOnInit(): void {
-    super.ngOnInit();
   }
 
   ngAfterViewInit() {

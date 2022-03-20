@@ -1,14 +1,13 @@
-import { ComponentPortal } from '@angular/cdk/portal';
+import { ComponentPortal, Portal } from '@angular/cdk/portal';
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-
-import { MediaPlayerComponent } from 'src/app/components/media-player/media-player.component';
-import { VideoData, videos } from 'src/app/data/videos';
-import { DisposableComponent } from 'src/app/disposable.component';
-import { PipService } from 'src/app/services/pip-service/pip-service';
-import { Portal, PortalBridgeService } from 'src/app/services/portal-bridge/portal-bridge.service';
+import { MediaPlayerComponent } from '../../../components/media-player/media-player.component';
+import { videos, VideoData } from '../../../data/videos';
+import { DisposableComponent } from '../../../disposable.component';
+import { PipService } from '../../../services/pip-service/pip-service';
+import { PortalBridgeService } from '../../../services/portal-bridge/portal-bridge.service';
 import { DATA_TOKEN } from './media-data.token';
 
 @Component({
@@ -22,7 +21,7 @@ export class MediaComponent extends DisposableComponent implements OnInit {
   videos = videos;
   video!: VideoData;
 
-  portal$!: Observable<Portal | null>;
+  portal$!: Observable<Portal<any> | null>;
   componentPortal!: ComponentPortal<MediaPlayerComponent>;
 
   constructor(private activatedRoute: ActivatedRoute, private portalBridge: PortalBridgeService, private pipService: PipService) {

@@ -6,7 +6,7 @@ import { MediaPlayerBase } from '../interfaces/MediaPlayerBase';
   templateUrl: './html5-video-wrapper.component.html',
   styleUrls: ['./html5-video-wrapper.component.scss']
 })
-export class Html5VideoWrapperComponent extends MediaPlayerBase implements OnInit {
+export class Html5VideoWrapperComponent extends MediaPlayerBase {
 
 
   @ViewChild('video') video!: ElementRef;
@@ -14,12 +14,6 @@ export class Html5VideoWrapperComponent extends MediaPlayerBase implements OnIni
 
   constructor() {
     super();
-  }
-
-  override ngOnInit(): void {
-    super.ngOnInit();
-
-
   }
 
   ngAfterViewInit() {
