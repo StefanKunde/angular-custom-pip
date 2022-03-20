@@ -1,0 +1,11 @@
+<video
+  #video
+  width="320"
+  height="240"
+  [autoplay]="autoPlay"
+  controls
+  (play)="videoPlayHandler($event)"
+>
+  <source [src]="videoUrl" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
