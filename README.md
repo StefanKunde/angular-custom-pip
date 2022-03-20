@@ -1,3 +1,3 @@
 # AngularCustomPip
 
-https://angular-ivy-bkqdy4.stackblitz.io/media/1
+https://stackblitz.com/edit/angular-ivy-bkqdy4
