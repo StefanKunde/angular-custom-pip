@@ -1,7 +1,9 @@
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, takeUntil, tap } from 'rxjs';
+import { Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 import { MediaPlayerComponent } from 'src/app/components/media-player/media-player.component';
 import { VideoData, videos } from 'src/app/data/videos';
 import { DisposableComponent } from 'src/app/disposable.component';
