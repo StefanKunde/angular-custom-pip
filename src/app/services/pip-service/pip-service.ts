@@ -34,11 +34,11 @@ export class PipService {
     this.mediaId = id;
   }
 
-  getCurrentTimeInSek() {
+  getCurrentTimeInSec() {
     return this.currentTimeInSec;
   }
 
-  setCurrentTime(timeInSec: number) {
+  setCurrentTimeInSec(timeInSec: number) {
     this.currentTimeInSec = timeInSec;
   }
 

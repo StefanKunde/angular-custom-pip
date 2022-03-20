@@ -14,9 +14,9 @@ export abstract class MediaPlayerBase extends DisposableComponent {
   @Input() autoPlay: boolean = true;
 
   /* Event emitter for current Time of the media player. */
-  @Output()
-  changedTimeInSec: EventEmitter<number> = new EventEmitter<number>();
+  @Output() changedTimeInSec: EventEmitter<number> = new EventEmitter<number>();
 
+  /* Function to emit the current time in seconds. Usually called every seconds. */
   abstract emitCurrentTime(): void;
 
   ngOnInit() {

@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'videos',
+    path: 'media',
     loadChildren: () => import('./pages/videos/videos.module').then(m => m.VideosModule)
   },
   {

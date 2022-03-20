@@ -1,6 +1,6 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { DisposableComponent } from 'src/app/disposable.component';
-import { DATA_TOKEN } from 'src/app/pages/videos/video/video-data.token';
+import { DATA_TOKEN } from 'src/app/pages/videos/media/media-data.token';
 import { PipService } from 'src/app/services/pip-service/pip-service';
 
 @Component({
@@ -8,7 +8,7 @@ import { PipService } from 'src/app/services/pip-service/pip-service';
   templateUrl: './media-player.component.html',
   styleUrls: ['./media-player.component.scss']
 })
-export class MediaPlayerComponent extends DisposableComponent implements OnInit, OnDestroy {
+export class MediaPlayerComponent extends DisposableComponent implements OnInit {
 
   data!: { youtubeVideoId?: string, videoUrl?: string, audioUrl?: string };
 
@@ -30,7 +30,7 @@ export class MediaPlayerComponent extends DisposableComponent implements OnInit,
   constructor(@Inject(DATA_TOKEN) private myData: any, private pipService: PipService) {
     super();
     if (myData.youtubeVideoId) {
-      this.isYoutube = myData.embeddedHtml.includes('youtube');
+      this.isYoutube = true;
       this.youTubeVideoId = myData.youtubeVideoId;
     } else if (myData.videoUrl) {
       this.isHtml5Video = true;
@@ -39,25 +39,14 @@ export class MediaPlayerComponent extends DisposableComponent implements OnInit,
       this.isHtml5Audio = true;
       this.audioUrl = myData.audioUrl;
     }
-
   }
 
   ngOnInit(): void {
-    this.startTimeInSec = this.pipService.getCurrentTimeInSek();
+    this.startTimeInSec = this.pipService.getCurrentTimeInSec();
   }
-
-  ngAfterViewInit() {
-    if (this.isYoutube) {
-      setTimeout(() => { // Timeout is needed because of timing problem of init and destroy iframe
-        this.startTimeInSec = this.pipService.getCurrentTimeInSek();
-      }, 0);
-    }
-  }
-
 
   timeChangeHandler(timeInSec: number) {
-    console.log('time from timeChangeHandler in media-player is: ', timeInSec);
-    this.pipService.setCurrentTime(timeInSec);
+    this.pipService.setCurrentTimeInSec(timeInSec);
   }
 
 }

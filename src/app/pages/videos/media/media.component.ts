@@ -7,17 +7,16 @@ import { VideoData, videos } from 'src/app/data/videos';
 import { DisposableComponent } from 'src/app/disposable.component';
 import { PipService } from 'src/app/services/pip-service/pip-service';
 import { Portal, PortalBridgeService } from 'src/app/services/portal-bridge/portal-bridge.service';
-import { DATA_TOKEN } from './video-data.token';
+import { DATA_TOKEN } from './media-data.token';
 
 @Component({
-  selector: 'app-video',
-  templateUrl: './video.component.html',
-  styleUrls: ['./video.component.scss']
+  selector: 'app-media',
+  templateUrl: './media.component.html',
+  styleUrls: ['./media.component.scss']
 })
-export class VideoComponent extends DisposableComponent implements OnInit {
+export class MediaComponent extends DisposableComponent implements OnInit {
 
   id!: string;
-  embeddedHtml!: string;
   videos = videos;
   video!: VideoData;
 
@@ -44,15 +43,12 @@ export class VideoComponent extends DisposableComponent implements OnInit {
 
     this.disposed.subscribe(x => {
       this.pipService.activatePipMode();
-
     });
   }
 
   createVideoPortal() {
-    console.log('set Time to 0');
-    this.pipService.setCurrentTime(0);
+    this.pipService.setCurrentTimeInSec(0);
     const data = {
-      embeddedHtml: this.video.embeddedHtml,
       youtubeVideoId: this.video.youtubeVideoId,
       videoUrl: this.video.videoUrl,
       audioUrl: this.video.audioUrl

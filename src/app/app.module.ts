@@ -9,7 +9,7 @@ import { PipVideoComponent } from './pip-video/pip-video.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { MediaPlayerComponent } from './components/media-player/media-player.component';
-import { VideoComponent } from './pages/videos/video/video.component';
+import { MediaComponent } from './pages/videos/media/media.component';
 import { VideosModule } from './pages/videos/videos.module';
 import { YoutubeVideoWrapperComponent } from './components/media-wrappers/youtube-video-wrapper/youtube-video-wrapper.component';
 import { Html5VideoWrapperComponent } from './components/media-wrappers/html5-video-wrapper/html5-video-wrapper.component';
@@ -23,7 +23,7 @@ import { Html5AudioWrapperComponent } from './components/media-wrappers/html5-au
     AboutUsComponent,
     SettingsComponent,
     MediaPlayerComponent,
-    VideoComponent,
+    MediaComponent,
     YoutubeVideoWrapperComponent,
     Html5VideoWrapperComponent,
     Html5AudioWrapperComponent

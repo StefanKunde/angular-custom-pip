@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { MediaPlayerBase } from '../../media-player/interfaces/MediaPlayerBase';
+import { MediaPlayerBase } from '../interfaces/MediaPlayerBase';
 
 @Component({
   selector: 'app-html5-audio-wrapper',
@@ -29,7 +29,6 @@ export class Html5AudioWrapperComponent extends MediaPlayerBase implements OnIni
   }
 
   videoPlayHandler(event: any) {
-    console.log('Audio started playing! Event: ', event);
     this.startPlaytimeIntervalTracker();
   }
 

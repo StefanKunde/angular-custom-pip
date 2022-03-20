@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
-import { DATA_TOKEN } from 'src/app/pages/videos/video/video-data.token';
+import { DATA_TOKEN } from 'src/app/pages/videos/media/media-data.token';
 import { PipService } from 'src/app/services/pip-service/pip-service';
-import { MediaPlayerBase } from '../../media-player/interfaces/MediaPlayerBase';
+import { MediaPlayerBase } from '../interfaces/MediaPlayerBase';
 
 @Component({
   selector: 'app-youtube-video-wrapper',
@@ -15,9 +15,7 @@ export class YoutubeVideoWrapperComponent extends MediaPlayerBase {
 
   constructor(@Inject(DATA_TOKEN) private myData: any, private pipService: PipService) {
     super();
-    if (myData.embeddedHtml) {
-      this.youTubeVideoId = myData.youtubeVideoId;
-    }
+    this.youTubeVideoId = myData.youtubeVideoId;
 
   }
 
@@ -38,7 +36,6 @@ export class YoutubeVideoWrapperComponent extends MediaPlayerBase {
     tag.src = 'https://www.youtube.com/iframe_api';
     const firstScriptTag: HTMLScriptElement = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-    console.log('API IS loaded ');
     window['onYouTubeIframeAPIReady'] = () => this.onYouTubeIframeAPIReady();
   }
 
