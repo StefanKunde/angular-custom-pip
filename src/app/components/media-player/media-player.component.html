@@ -1,0 +1,26 @@
+<app-youtube-video-wrapper
+  *ngIf="isYoutube"
+  [startTimeInSec]="startTimeInSec"
+  [autoPlay]="autoPlay"
+  (changedTimeInSec)="timeChangeHandler($event)"
+></app-youtube-video-wrapper>
+
+<app-html5-video-wrapper
+  *ngIf="isHtml5Video"
+  [videoUrl]="videoUrl"
+  [startTimeInSec]="startTimeInSec"
+  [autoPlay]="autoPlay"
+  (changedTimeInSec)="timeChangeHandler($event)"
+>
+</app-html5-video-wrapper>
+
+<app-html5-audio-wrapper
+  *ngIf="isHtml5Audio"
+  [audioUrl]="audioUrl"
+  [startTimeInSec]="startTimeInSec"
+  [autoPlay]="autoPlay"
+  (changedTimeInSec)="timeChangeHandler($event)"
+>
+</app-html5-audio-wrapper>
+
+<div>PORTAL</div>

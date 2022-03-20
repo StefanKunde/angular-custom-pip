@@ -1,7 +1,10 @@
 export interface VideoData {
   id: number;
-  embeddedHtml: string;
+  embeddedHtml?: string;
   youtubeVideoId?: string;
+  videoUrl?: string;
+  audioUrl?: string;
+
 }
 
 export const videos: VideoData[] = [
@@ -12,12 +15,10 @@ export const videos: VideoData[] = [
   },
   {
     id: 2,
-    embeddedHtml: '<iframe width="560" height="315" src="https://www.youtube.com/embed/zeT_5VvGNlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    , youtubeVideoId: 'q9d6-_cEHNQ'
+    audioUrl: 'https://download.samplelib.com/mp3/sample-15s.mp3'
   },
   {
     id: 3,
-    embeddedHtml: '<iframe width="560" height="315" src="https://www.youtube.com/embed/388e_8mu1t4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    , youtubeVideoId: 'D2R-LE8NlOE'
+    videoUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
   }
 ]
