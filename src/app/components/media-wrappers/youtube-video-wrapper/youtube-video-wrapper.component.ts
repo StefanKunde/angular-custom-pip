@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { DATA_TOKEN } from 'src/app/pages/videos/media/media-data.token';
-import { PipService } from 'src/app/services/pip-service/pip-service';
+import { DATA_TOKEN } from '../../../pages/videos/media/media-data.token';
+import { PipService } from '../../../services/pip-service/pip-service';
 import { MediaPlayerBase } from '../interfaces/MediaPlayerBase';
 
 @Component({

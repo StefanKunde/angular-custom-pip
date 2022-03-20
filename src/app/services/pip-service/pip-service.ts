@@ -1,5 +1,5 @@
 import { Injectable, InjectionToken } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 export const CONTAINER_DATA = new InjectionToken<{}>('CONTAINER_DATA');
 

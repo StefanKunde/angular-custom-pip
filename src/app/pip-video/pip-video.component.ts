@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PipService } from '../services/pip-service/pip-service';
 import { Portal, PortalBridgeService } from '../services/portal-bridge/portal-bridge.service';

@@ -1,7 +1,7 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import { DisposableComponent } from 'src/app/disposable.component';
-import { DATA_TOKEN } from 'src/app/pages/videos/media/media-data.token';
-import { PipService } from 'src/app/services/pip-service/pip-service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DisposableComponent } from '../../disposable.component';
+import { DATA_TOKEN } from '../../pages/videos/media/media-data.token';
+import { PipService } from '../../services/pip-service/pip-service';
 
 @Component({
   selector: 'app-media-player',

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { DisposableComponent } from "src/app/disposable.component";
+import { DisposableComponent } from "../../../disposable.component";
 
 @Component({ template: '' })
 export abstract class MediaPlayerBase extends DisposableComponent {
