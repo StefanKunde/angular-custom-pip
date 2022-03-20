@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PipService } from './services/pip-service/pip-service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-custom-pip';
+
+  constructor(public pipService: PipService) {
+
+  }
 }
